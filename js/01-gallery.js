@@ -14,10 +14,13 @@ const imagesLi = galleryItems.map(({preview, original, description}) => {
    image.setAttribute("alt", description)
    image.onclick
 
-   image.onclick = () => {
-    basicLightbox.create(`
+   image.onclick = (() => {
+   const modal = basicLightbox.create(`
 		<img width="1400" height="900" src="${original}">
-	`).show()}
+	`).show();
+   
+})
+   
 
    refer.append(image)
    
